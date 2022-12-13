@@ -203,3 +203,24 @@ FROM pasien_xxxx WHERE alamat='Yogyakarta'
 sELECT alamat AS Kota_Asal, COUNT(alamat) AS Jumlah 
 FROM pasien_xxxx GROUP BY alamat
 
+
+---- praktikum 9
+select * from dokter_xxxx
+select * from jadwal_dokter_xxxx
+-- cross join
+SELECT *
+FROM dokter_xxxx CROSS JOIN jadwal_dokter_xxxx
+
+-- inner join
+-- SELECT tabel_1.kolom, tabel_2.kolom 
+-- FROM tabel_1 INNER JOIN tabel_2
+-- ON tabel_1.kolom_kunci_1=tabel_2.kolom_kunci_2
+select * from
+dokter_xxxx inner join jadwal_dokter_xxxx
+on dokter_xxxx.kode_dokter = jadwal_dokter_xxxx.kode_dokter
+
+
+-------- outer join
+---- SELECT tabel_1.kolom, tabel_2.kolom
+---- FROM tabel_1 [LEFT|RIGHT|FULL OUTER JOIN] tabel_2 
+---- ON tabel_1.kolom_kunci_1=tabel_2.kolom_kunci_2-- Left join mengikut yang kiriselect * from dokter_xxxx left join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter-- right join mengikuti yang kananselect * from dokter_xxxx right join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter-- full outer joinselect * from dokter_xxxx full outer join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter
