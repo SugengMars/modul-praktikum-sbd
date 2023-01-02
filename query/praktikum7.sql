@@ -142,39 +142,6 @@ select * from pasien_xxxx
 select * from penyakit_xxxx
 select * from resep_xxxx
 
----- praktikum modul 4
-
---- where
--- SELECT [Daftar_Kolom] FROM Tabel WHERE Kondisi
-select * from dokter_xxxx 
-where alamat ='Jakarta'
-
-select * from dokter_xxxx
-where gaji > 1500000
-
----- ORDER BY
-select * from dokter_xxxx
-order by nama_dokter
-
-select * from dokter_xxxx
-order by nama_dokter desc
-
---- BETWEEN
-SELECT * FROM dokter_xxxx
-where gaji between 1500000 and 2500000
-
---- TOP 
-SELECT top 2 * FROM dokter_xxxx
-
------ PRAKTIKUM 5
--- like
-
--- percent(%)
-SELECT * FROM dokter_xxxx
-where nama_dokter like 'E%'
-
-SELECT * FROM dokter_xxxxWHERE nama_dokter LIKE '%O'-- undescore(_)SELECT *FROM dokter_xxxxWHERE nama_dokter like '_U%'-- updateselect * from dokter_xxxxUPDATE dokter_xxxx SET nama_dokter='Ema Utami Saja', alamat='Semarang'
-WHERE kode_dokter='D0001'select * from dokter_xxxx-- DELETEselect * from jadwal_dokter_xxxxDELETE FROM jadwal_dokter_xxxx WHERE kode_jadwal='F0001'
 
 ------ Praktikum 7
 ---- Agregate avg, max, min, sum, count
@@ -200,6 +167,6 @@ FROM pasien_xxxx WHERE alamat='Yogyakarta'
 
 ---- PRAKTIKUM 8
 -- group by
-sELECT alamat AS Kota_Asal, COUNT(alamat) AS Jumlah 
+SELECT alamat AS Kota_Asal, COUNT(alamat) AS Jumlah 
 FROM pasien_xxxx GROUP BY alamat
 
