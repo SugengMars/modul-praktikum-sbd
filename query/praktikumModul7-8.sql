@@ -142,26 +142,33 @@ select * from pasien_xxxx
 select * from penyakit_xxxx
 select * from resep_xxxx
 
----- praktikum 9
-select * from dokter_xxxx
-select * from jadwal_dokter_xxxx
--- cross join
-SELECT *
-FROM dokter_xxxx CROSS JOIN jadwal_dokter_xxxx
 
--- inner join
--- SELECT tabel_1.kolom, tabel_2.kolom 
--- FROM tabel_1 INNER JOIN tabel_2
--- ON tabel_1.kolom_kunci_1=tabel_2.kolom_kunci_2
-select * from
-dokter_xxxx inner join jadwal_dokter_xxxx
-on dokter_xxxx.kode_dokter = jadwal_dokter_xxxx.kode_dokter
+------ Praktikum 7
+---- Agregate avg, max, min, sum, count
+-- count
+select * from pasien_xxxx
+select count(*) from pasien_xxxx
 
+-- max
+select max(periksa) from pasien_xxxx
 
--------- outer join
----- SELECT tabel_1.kolom, tabel_2.kolom
----- FROM tabel_1 [LEFT|RIGHT|FULL OUTER JOIN] tabel_2 
----- ON tabel_1.kolom_kunci_1=tabel_2.kolom_kunci_2-- Left join mengikut yang kiriselect * from dokter_xxxx left join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter-- right join mengikuti yang kananselect * from dokter_xxxx right join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter-- full outer joinselect * from dokter_xxxx full outer join jadwal_dokter_xxxxon dokter_xxxx.kode_dokter=jadwal_dokter_xxxx.kode_dokter-- dengan whereselect * from
-dokter_xxxx inner join jadwal_dokter_xxxx
-on dokter_xxxx.kode_dokter = jadwal_dokter_xxxx.kode_dokter
-where dokter_xxxx.gender = 'P'
+-- min
+select min(periksa) from pasien_xxxx
+
+-- avg
+select avg(periksa) from pasien_xxxx
+
+-- sum
+select sum(periksa) from pasien_xxxx
+
+-- Menghitung jumlah pasien yang telah diperiksa lebih dari 2 kali
+SELECT COUNT(kode_pasien) FROM pasien_xxxx WHERE periksa>2
+-- alias
+SELECT COUNT(kode_pasien) AS [Jumlah Pasien Dari Yogyakarta] 
+FROM pasien_xxxx WHERE alamat='Yogyakarta'
+
+---- PRAKTIKUM 8
+-- group by
+SELECT alamat AS Kota_Asal, COUNT(alamat) AS Jumlah 
+FROM pasien_xxxx GROUP BY alamat
+
